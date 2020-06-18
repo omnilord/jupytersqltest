@@ -1,14 +1,9 @@
 library(DBI)
 library(RSQLite)
-library(rstudioapi)
-
-
-# Change the working directory to match this script
-setwd(dirname(getActiveDocumentContext()$path))
-
+library(here)
 
 # Create/Connect to an SQLite3 database
-conn = RSQLite::dbConnect(RSQLite::SQLite(), './test_r.db')
+conn = RSQLite::dbConnect(RSQLite::SQLite(), here('test_r.db'))
 
 
 # Create a test table if it doesn't already exist
